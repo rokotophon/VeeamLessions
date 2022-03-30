@@ -9,14 +9,11 @@ namespace Lab1._1._1
     {
         static void Main(string[] args)
         {
-            var imsSource = ImmutableString.Create("Why the hell am I a double immutable string");
-            
-            var imsMutable = imsSource.Remove(7, 2);
-            Console.WriteLine(imsMutable);
+            var imString = ImmutableString.Create("Why the hell am I a immutable string");
+                        
+            Console.WriteLine(imString.Insert(20, "double ") + ImmutableString.Create("?"));
 
-            var imsDouble = imsSource.Substring(0, 6);
-
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(imString.Substring(16, 2) + "have no idea.");
         }
     }
 }
