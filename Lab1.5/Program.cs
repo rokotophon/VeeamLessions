@@ -7,6 +7,8 @@ namespace Lab1._5
     {
         static void Main(string[] args)
         {
+            Console.WriteLine($"Main thread ={Thread.CurrentThread.ManagedThreadId}");
+
             var cache = new MyCache(1, 10);
             SomeHandle sh;
             var rnd = new Random();
