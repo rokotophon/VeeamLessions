@@ -40,19 +40,7 @@ namespace Lab2._2._1
         }
         public bool Wait(TimeSpan timeout)
         {
-            //return Task.Run(() => manualReset.WaitOne()).Wait(timeout);
-            
             return manualReset.WaitOne(timeout);
-
-            var signaled = false;
-            Task.WhenAny(
-                Task.Run(() => Thread.Sleep(timeout)), 
-                Task.Run(() => 
-                { 
-                    manualReset.WaitOne(); 
-                    signaled = true;
-                })).Wait();
-            return signaled;
         }
         public void Dispose()
         {
